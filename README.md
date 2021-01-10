@@ -7,3 +7,4 @@ Keep track of income and expenses.
 * Display Transaction item in DOM
 * Add, Edit, Delete Transactions
 * Auto update Main Balance
+* Small Graph to show Income, Expense ratio
