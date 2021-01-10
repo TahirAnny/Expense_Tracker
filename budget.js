@@ -25,14 +25,16 @@ const incomeTitle = document.getElementById("income-title-input");
 const incomeAmount = document.getElementById("income-amount-input");
 
 //VARIABLES
-let entry_List = [];
+let entry_List;
 let balance = 0, income = 0, expense = 0;
-
 const DELETE = "delete", EDIT = "edit";
+
+//CHECK IF THERE IS ANY SAVED DATA IN LOCAL STORAGE OR NOT
+entry_List = JSON.parse(localStorage.getItem("entry_list")) || [];
+updateUi();
 
 //EVENT LISTENERS
 //TOGGLING BETWEEN TABS
-
 expenseTab.addEventListener("click", function(){
     show(expenseEl);
     hide([incomeEl, allEl]);
@@ -93,7 +95,6 @@ expenseList.addEventListener("click", deleteOrEdit);
 allList.addEventListener("click", deleteOrEdit);
 
 //FUNCTIONS
-
 function show(element){
     element.classList.remove("hide");
 }
@@ -137,17 +138,24 @@ function updateUi(){
         }
         showEntry(allList, entry.type, entry.title, entry.amount, index);
     });
+
+    //UPDATE CHART AFTER NEW ENTRY
+    updateChart(income, expense);
+
+    //SAVE LIST DATA IN LOCAL STORAGE
+    localStorage.setItem("entry_list", JSON.stringify(entry_List));
 }
 
 function showEntry(list, type, title, amount, id){
     const entry = `<li id = ${id} class = "${type}">
-                        <div class = "entry">${title}: $${amount}</div>
+                        <div class = "entry">${title} : $${amount}</div>
                         <div id = "edit"></div>
                         <div id = "delete"></div>
     </li>`;
 
+    
+    //ADD EVERY NEW ITEM IN THE TOP OF THE LIST
     const position = "afterbegin";
-
     list.insertAdjacentHTML(position, entry);
 }
 
@@ -192,7 +200,7 @@ function deleteOrEdit(event){
 }
 
 function deleteEntry(entry){
-    entry_List.splice(entry.is, 1);
+    entry_List.splice(entry.id, 1);
 
     updateUi();
 }

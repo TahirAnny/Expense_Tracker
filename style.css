@@ -131,7 +131,7 @@ input[type="number"] {
   color: #fff;
   opacity: 0.5;
 }
-.budget-header .account .outcome .outcome-total {
+.budget-header .account .outcome .expense-total {
   color: #61160b;
   font-family: "Gilroy Bold";
 }
@@ -141,7 +141,6 @@ input[type="number"] {
   display: block;
   width: 360px;
   height: 470px;
-  background-color: rgb(73 173 188);
   margin-top: 35px;
   border-radius: 30px 30px 30px 30px;
 }
@@ -276,9 +275,9 @@ input[type="number"] {
   padding-left: 10px;
   font-size: 1.2em;
   font-family: "Gilroy";
-  margin: 5px;
+  margin: 9px;
   margin-left: 10px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 10px 10px 10px;
   border: none;
 }
 
@@ -290,7 +289,7 @@ input[type="number"] {
   font-family: "Gilroy";
   margin: 5px;
   margin-left: -10px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 10px 10px 10px;
   border: none;
 }
 
@@ -328,7 +327,7 @@ input[type="number"] {
   margin-bottom: 10px;
   word-wrap: break-word;
   font-family: "Gilroy Bold";
-  color: #f0624d;
+  color: #611004;
 }
 
 .budget-dashboard #expense ul.list li #edit {
@@ -379,9 +378,9 @@ input[type="number"] {
   padding-left: 10px;
   font-size: 1.2em;
   font-family: "Gilroy";
-  margin: 5px;
+  margin: 9px;
   margin-left: 10px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 10px 10px 10px;
   border: none;
 }
 
@@ -393,7 +392,7 @@ input[type="number"] {
   font-family: "Gilroy";
   margin: 5px;
   margin-left: -10px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 10px 10px 10px;
   border: none;
 }
 
